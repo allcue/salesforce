@@ -1,5 +1,5 @@
 import { ClientInitParams, DefaultClientConfig } from 'src/types/client.types';
-import { OAuth2 } from 'src/oauth2';
+import { OAuth } from 'src/OAuth';
 
 const defaultClientConfig: DefaultClientConfig = {
   loginUrl: 'https://login.salesforce.com',
@@ -12,7 +12,7 @@ export class SalesforceClient {
   loginUrl: string;
   clientId: string;
   redirectUri: string;
-  oauth2: OAuth2;
+  oauth: OAuth;
 
   constructor(config: ClientInitParams) {
     const { instanceUrl, loginUrl, clientId, redirectUri } = config;
@@ -22,15 +22,10 @@ export class SalesforceClient {
     this.redirectUri = redirectUri ?? defaultClientConfig.redirectUri;
     this.clientId = clientId;
 
-    this.oauth2 = new OAuth2({
+    this.oauth = new OAuth({
       loginUrl: this.loginUrl,
       redirectUri: this.redirectUri,
       clientId: this.clientId,
     });
   }
-
-  async authorize(
-    code: string,
-    callbackParams: Record<string, string> = {},
-  ): Promise<any> {}
 }
