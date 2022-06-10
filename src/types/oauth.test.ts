@@ -1,4 +1,5 @@
 import { OAuth } from 'src/OAuth';
+import { ITransport } from 'src/types/transport.types';
 
 describe('OAuth', () => {
   let oauth: OAuth;
@@ -13,6 +14,7 @@ describe('OAuth', () => {
       loginUrl,
       clientId,
       redirectUri,
+      transport: {} as ITransport,
     });
   });
 

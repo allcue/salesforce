@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["ES2020"],
+    "lib": [
+      "ES2020"
+    ],
     "module": "commonjs",
     "target": "es2020",
     "moduleResolution": "node",
@@ -22,9 +24,17 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "src/*": ["src/*"]
+      "src/*": [
+        "src/*"
+      ]
     }
   },
-  "include": ["./src"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "./src",
+    "./scripts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
